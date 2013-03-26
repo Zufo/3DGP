@@ -31,10 +31,19 @@
 
     //creates the camera and sets camera position
     camera = new THREE.Camera(70, 640 / 480, 1, 1000);
+
+    camera.position.y = 150;
+    camera.position.z = 500;
+    camera.target.position.y = 150;
+    
+    /*
+    //another camera-angle, in which se quad shows as a cube
     camera.position.y = 350;
     camera.position.x = -250;
     camera.position.z = 500;
     camera.target.position.y = 0;
+    */
+   
 
     scene = new THREE.Scene();
 

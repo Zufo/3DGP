@@ -17,13 +17,19 @@
 </head>
 <body>
 <script type="text/javascript">
+
+    //creates a container, in which the actual drawing will be done
     var container;
     var camera, scene, renderer;
     var cube;
 
+
+    //creates a <div> to the html code
     container = document.createElement('div');
     document.body.appendChild(container);
 
+
+    //creates the camera and sets camera position
     camera = new THREE.Camera(70, 640 / 480, 1, 1000);
     camera.position.y = 350;
     camera.position.x = -250;
@@ -32,24 +38,21 @@
 
     scene = new THREE.Scene();
 
+    //creates the material for the cube
     var material = new THREE.MeshLambertMaterial({ color: 0xff0000 });
 
-
+    //creates the actual cube
     cube = new THREE.Mesh(new THREE.CubeGeometry(200, 200, 200, 1, 1, 1, material), new THREE.MeshFaceMaterial());
     cube.position.y = 150;
     scene.addObject(cube);
 
-
+    //adds renderer
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(600, 600);
 
     container.appendChild(renderer.domElement);
 
-
     renderer.render(scene, camera);
-
- 
-
 
 </script>
 

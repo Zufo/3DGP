@@ -43,9 +43,9 @@
 			varying float vAngle;
 
 			vec4 color(float a) {
-				return vec4(smoothstep(0.0, 360.0, float(gl_FragCoord.x)),
+				return vec4(smoothstep(0.0, 360.0, a),
+                            smoothstep(0.0, 360.0, float(gl_FragCoord.x)),
 							smoothstep(0.0, 360.0, float(gl_FragCoord.y)),
-							smoothstep(0.0, 360.0, a),
 							1.0);
 			}
 

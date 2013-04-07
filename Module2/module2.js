@@ -14,7 +14,7 @@ var WebGLApp = function () {
     this.shaderProgram = null;                    // shader program (WebGL-specific)
     this.mode = "TRIANGLES";
     this.radius = 1.0	// Radius of the circle
-    this.numVertices = 20	// Number of angles in the circle
+    this.numVertices = 20	// Number of vertices in the circle
 
     /* ---------- Initialization routine ---------- */
     this.start = function (canvas) {
@@ -69,13 +69,13 @@ var WebGLApp = function () {
         // define vertex data
         var delta = 360 / that.numVertices;
 
-        var angles = [];
+        var points = [];
 
         for (var theta = 0; theta < 360; theta += delta)
-            angles.push(theta); // Add each vertex angle to the array
+            points.push(theta); // Add each vertex angle to the array
 
         // copy data from verts-array into buffer
-        that.gl.bufferData(that.gl.ARRAY_BUFFER, new Float32Array(angles), that.gl.STATIC_DRAW);
+        that.gl.bufferData(that.gl.ARRAY_BUFFER, new Float32Array(points), that.gl.STATIC_DRAW);
 
         // add few helpful parameters
         that.vertices.itemSize = 1;  // how many floats does a single vertex element need

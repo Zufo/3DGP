@@ -207,7 +207,7 @@ $(function () {
     // add ground to scene
     scene.add(ground);
 
-    // NEW! This is called to display the arm.
+    //This is called to display the arm.
     handy();
 
     // mesh loading functionality
